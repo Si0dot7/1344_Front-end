@@ -10,8 +10,8 @@
     align-items: center;
     justify-content: center; 
     margin: 0;
-    width: 100vw;
-    height: 80dvh;
+    /* width: 100vw; */
+    height: 88.5dvh;
     background: linear-gradient(45deg,#8486bb,#e5e5ea);
 }
 
@@ -23,7 +23,7 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     width: 500px;
     /* height: 570px; */
-    margin-top: 70px;
+    margin-top: 0;
     min-height: auto;
 }
 

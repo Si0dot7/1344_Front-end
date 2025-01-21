@@ -1,6 +1,6 @@
 import './Dashboard.css';
 import {useEffect, useState} from 'react'
-import Chart from "react-apexcharts";
+import RadialBar from './Chart/RadialBar';
 
 const Dashboard=()=>{
     const apiKey = 'bac34d482d2ded2bf7862905d5201f0a'
@@ -41,64 +41,6 @@ const Dashboard=()=>{
       return (k-273).toFixed()
     }
 
-    const options = {
-      chart: {
-        height: 200,
-        type: "radialBar",
-      },
-    
-      series: [temperature],
-      colors: [chartColor],
-      plotOptions: {
-        radialBar: {
-          hollow: {
-            margin: 0,
-            size: "70%",
-            background: "#293450"
-          },
-          track: {
-            dropShadow: {
-              enabled: true,
-              top: 2,
-              left: 0,
-              blur: 4,
-              opacity: 0.15
-            }
-          },
-          dataLabels: {
-            name: {
-              offsetY: -10,
-              color: "#fff",
-              fontSize: "13px"
-            },
-            value: {
-              color: "#fff",
-              fontSize: "30px",
-              show: true,
-              formatter: function (val) {
-                return `${val}°C`;
-              }
-              
-            }
-          }
-        }
-      },
-      fill: {
-        type: "gradient",
-        gradient: {
-          shade: "dark",
-          type: "vertical",
-          gradientToColors: ['#fefefe'],
-          stops: [0, 100]
-        }
-      },
-      stroke: {
-        lineCap: "round"
-      },
-      labels: ['Current']
-    }
-    
-    
     return (
       <div className="App">
         <section>
@@ -117,7 +59,7 @@ const Dashboard=()=>{
               <div className='status'>{city.weather?.[0]?.main}</div>
               <div className='humidity'>humidity: {city.main?.humidity}</div>
               <div className='wind'>wind: {city.wind?.speed}</div>
-            </div>         
+            </div>                   
           </div>
           <form>
           <div className='input'>
@@ -125,22 +67,10 @@ const Dashboard=()=>{
             <button type='submit' onClick={checkData}>Submit</button>
           </div>
           </form>
+          
         </section>
         <div className='chart-1'>
-                    <Chart
-                      options={options}
-                      series={options.series}
-                      type="radialBar"
-                      width="300"
-                
-                />
-                 <Chart
-                      options={options}
-                      series={options.series}
-                      type="radialBar"
-                      width="300"
-                
-                />
+              <RadialBar temperature={temperature} chartColor={chartColor}/>
         </div>
       </div>
     );
