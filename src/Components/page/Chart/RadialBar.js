@@ -57,14 +57,17 @@ const RadialBar=({temperature,chartColor})=>{
         },
         labels: ['Current']
       }
+      
     return(
-        <Chart
+        <diV>
+          <Chart
           options={options}
           series={options.series}
           type="radialBar"
-          width="300"
-                        
+          width="200"             
         />
+        
+        </diV>
     );
 }
 

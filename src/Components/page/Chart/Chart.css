@@ -1,0 +1,13 @@
+.chart{
+    display:flex;
+    
+}
+
+.radial{
+    display: block;
+    
+}
+
+.manyChart{
+    margin-top: 10px;
+}

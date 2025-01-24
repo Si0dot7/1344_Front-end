@@ -1,6 +1,10 @@
 import './Dashboard.css';
 import {useEffect, useState} from 'react'
 import RadialBar from './Chart/RadialBar';
+import Area from './Chart/Area';
+import './Chart/Chart.css'
+import BasicBar from './Chart/BasicBar';
+
 
 const Dashboard=()=>{
     const apiKey = 'bac34d482d2ded2bf7862905d5201f0a'
@@ -44,12 +48,10 @@ const Dashboard=()=>{
     return (
       <div className="App">
         <section>
-  
           <div className='location'>
             <h1 className='city'>{city.name}</h1>
             <p className='state'>{city.sys?.country}</p>
           </div>
-  
           <div className='card'>
             <div className='weather'>
               <h1>{convertTemp(city.main?.temp)}&deg;C</h1>
@@ -62,16 +64,29 @@ const Dashboard=()=>{
             </div>                   
           </div>
           <form>
-          <div className='input'>
+          <div className='input'>            
             <input type='text' value={input} onChange={(e)=>setInput(e.target.value)}></input>
-            <button type='submit' onClick={checkData}>Submit</button>
+            <button type='submit' onClick={checkData}>Submit</button>           
           </div>
-          </form>
-          
+          <p>//ป้อนชื่อจังหวัดหรือประเทศโดยขึ้นต้นด้วยตัวพิมพ์ใหญ่</p>
+          </form>     
         </section>
-        <div className='chart-1'>
+        <div className='chart'>
+            <div className='radial'>
               <RadialBar temperature={temperature} chartColor={chartColor}/>
-        </div>
+              <RadialBar temperature={temperature} chartColor={chartColor}/>
+              <RadialBar temperature={temperature} chartColor={chartColor}/>
+            </div>
+            <div className='manyChart'>
+              <Area/>
+              <BasicBar/>
+            </div>
+            <div className='manyChart'>
+              <Area/>
+              <BasicBar/>
+            </div>
+          </div>
+        
       </div>
     );
   }

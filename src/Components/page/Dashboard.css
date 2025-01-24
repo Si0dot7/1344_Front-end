@@ -5,14 +5,15 @@ body{
     text-align: center;
     color: #515151;
     background: linear-gradient(45deg,#8486bb,#e5e5ea);
-    
   }
   
   .App{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    /* flex-direction: column; */
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-left: 10px;
+    height: 100dvh;
   }
   
   section{
@@ -22,8 +23,14 @@ body{
   
   .location{
     color: #fff;
+    text-align: left;
+    margin-left: 33%;
   }
   
+  .state{
+    margin-left: 20%;
+  }
+
   .city{
     margin: 0;
     font-size: 40px;
@@ -70,13 +77,15 @@ body{
     margin-top: 30px;
     font-size: 18px;
     
+    
   }
   
   .input{
     display: flex;
     flex-direction:column;
-    align-items: center;
+    align-items: left;
     justify-content: center;
+    margin-left: 33%;
   }
   
   button{
@@ -86,4 +95,9 @@ body{
     background: #f39340;
     font-size: 18px;
     color: white;
+  }
+
+  .input p{
+    display: block;
+    text-align: left;
   }
