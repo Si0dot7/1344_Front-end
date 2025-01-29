@@ -15,11 +15,6 @@ const MenuData = [
         title:'Dashboard',
         path:'/dashboard',
         icon:<BiSolidDashboard/>
-    },
-    {
-        title:'MyChart',
-        path:'/mychart',
-        icon:<BiSolidDashboard/>
     }
 ]
 

@@ -12,8 +12,9 @@
     margin: 0;
     /* width: 100vw; */
     height: 88.5dvh;
-    background: linear-gradient(45deg,#8486bb,#e5e5ea);
+    background: linear-gradient(180deg,#dbdbdb,#f7f7f7);
 }
+
 
 
 .form{
